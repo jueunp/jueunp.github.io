@@ -1,0 +1,35 @@
+
+title: 박주은 노트
+description: 연구/논문 리뷰와 개발 메모
+url: "" # e.g., https://ourjune21.github.io
+baseurl: "" # repo가 ourjune21.github.io면 빈 값 유지
+author:
+  name: "박주은"
+  location: "Seoul, Korea"
+  bio: "Brain-to-Text, EEG/fMRI, LLM"
+  email: "me@example.com"
+  github: "ourjune21"
+
+# GitHub Pages 기본 Jekyll 빌드(plugins 사용 안함)
+markdown: kramdown
+theme: minima
+permalink: /:categories/:title/
+collections:
+  pages:
+    output: true
+
+# 네비게이션 메뉴
+nav:
+  - title: 전체 게시글
+    url: /archive/
+  - title: 논문리뷰
+    url: /category/%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0/
+  - title: 구현/프로그래밍
+    url: /category/%EA%B5%AC%ED%98%84/
+  - title: 공부
+    url: /category/%EA%B3%B5%EB%B6%80/
+  - title: About
+    url: /about/
+
+# 검색 (Lunr.js 클라이언트 검색용)
+# /search.json 에 글 메타데이터를 출력

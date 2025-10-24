@@ -1,0 +1,33 @@
+
+<header class="site-header">
+  <div class="container header-grid">
+    <div class="brand">
+      <a href="{{ '/' | relative_url }}" class="site-title">{{ site.title }}</a>
+      <div class="site-desc">{{ site.description }}</div>
+    </div>
+    <nav class="nav">
+      <button class="menu-btn" aria-label="Toggle menu" onclick="document.querySelector('.nav ul').classList.toggle('open')">☰</button>
+      <ul>
+        {% for item in site.nav %}
+          <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <div class="searchbox">
+      <input id="search-input" type="search" placeholder="검색…" aria-label="Search">
+      <div id="search-results" class="search-results"></div>
+    </div>
+  </div>
+  <div class="author-card container">
+    <div class="avatar" aria-hidden="true">🧠</div>
+    <div class="meta">
+      <div class="name">{{ site.author.name }}</div>
+      <div class="bio">{{ site.author.bio }}</div>
+      <div class="links">
+        <span>{{ site.author.location }}</span>
+        {% if site.author.github %} · <a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+        {% if site.author.email %} · <a href="mailto:{{ site.author.email }}">Email</a>{% endif %}
+      </div>
+    </div>
+  </div>
+</header>
